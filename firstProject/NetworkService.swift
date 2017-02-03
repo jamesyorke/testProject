@@ -10,24 +10,35 @@ import UIKit
 
 typealias payload = [String: Any]
 
-class NetworkService: NSObject {
+class NetworkService {
 
-    var names: [String] = []
-    
-    var prices: [Int] = []
-    
-    override init() {
-        super.init()
-        
-        let urlString = "https://api.qwertyuiop.net-a-porter.com/TON/GB/en/20/0/summaries?brandIds=291&visibility=visible"
-//        let urlString = "https://api.net-a-porter.com/TON/GB/en/20/0/summaries?brandIds=291&visibility=visible"
+    static let sharedInstance = NetworkService()
 
-        let url = URL(string: urlString)!
-        
-        self.callNetwork(with: url)
+    var model: DataModel? = nil
+    var delegate: addDataToStoreDelegate?
+    
+    var url:URL?
+    
+    let urlString = "https://api.net-a-porter.com/TON/GB/en/20/0/summaries?brandIds=291&visibility=visible"
+    
+    private init() {
+        print("service init")
     }
     
-    func callNetwork(with url: URL) {
+    func startService(completion: @escaping (_ success:Bool) -> Void) {
+        model = DataModel.sharedInstance
+
+        url = URL(string: urlString)
+        if let url = url {
+            self.callNetwork(with: url) { _ in
+                completion(true)
+            }
+        } else {
+            completion(false)
+        }
+    }
+    
+    func callNetwork(with url: URL, completion: @escaping (() -> Void)) {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
@@ -35,6 +46,8 @@ class NetworkService: NSObject {
             
             if let error = error {
                 print(error)
+                
+                //Error - URL invalid - get JSON from local source instead
                 let localData: Data? = self.getJsonLocally()
                 
                 if nil == jsonData {
@@ -47,14 +60,8 @@ class NetworkService: NSObject {
                 guard json != nil else { return }
                 
                 self.parseJsonData(json!)
+                completion()
             }
-            
-            if self.names.count == self.prices.count {
-                print("SUCCESS")
-            } else {
-                print("FAILURE")
-            }
-            
         }.resume()
 
 
@@ -64,13 +71,13 @@ class NetworkService: NSObject {
         
         guard let summaries = json["summaries"] as? [payload] else { return }
         
-        
         for summary in summaries {
             
-            guard let name = summary["name"] as? String, let price = summary["price"] as? payload, let amount = price["amount"] as? Int else { return }
-            
-            self.names.append(name)
-            self.prices.append(amount)
+            guard let name = summary["name"] as? String, let price = summary["price"] as? payload, let amount = price["amount"] as? Int else {
+                return
+            }
+            delegate?.addName(name: name)
+            delegate?.addPrice(priceInt: amount)
         }
         
     }
@@ -87,5 +94,12 @@ class NetworkService: NSObject {
         }
         return nil
     }
+    
 }
 
+
+protocol addDataToStoreDelegate {
+    func addName(name: String)
+    func addPrice(priceInt: Int)
+    
+}

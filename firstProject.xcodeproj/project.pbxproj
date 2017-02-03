@@ -13,7 +13,9 @@
 		89999EC71E3258510092C0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89999EC61E3258510092C0F1 /* Assets.xcassets */; };
 		89999ECA1E3258510092C0F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89999EC81E3258510092C0F1 /* LaunchScreen.storyboard */; };
 		89999ED21E3259470092C0F1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89999ED11E3259470092C0F1 /* NetworkService.swift */; };
-		89999ED41E327CBF0092C0F1 /* summaries.json in Resources */ = {isa = PBXBuildFile; fileRef = 89999ED31E327CBF0092C0F1 /* summaries.json */; };
+		89CF2F3B1E44C9C6000061BD /* summaries.json in Resources */ = {isa = PBXBuildFile; fileRef = 89CF2F3A1E44C9C6000061BD /* summaries.json */; };
+		89CF2F3D1E44D122000061BD /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF2F3C1E44D122000061BD /* dataModel.swift */; };
+		89CF2F411E44EFA4000061BD /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF2F401E44EFA4000061BD /* ProductTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		89999EC91E3258510092C0F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89999ECB1E3258510092C0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89999ED11E3259470092C0F1 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		89999ED31E327CBF0092C0F1 /* summaries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = summaries.json; path = ../../../Desktop/summaries.json; sourceTree = "<group>"; };
+		89CF2F3A1E44C9C6000061BD /* summaries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = summaries.json; sourceTree = "<group>"; };
+		89CF2F3C1E44D122000061BD /* dataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = dataModel.swift; path = Model/dataModel.swift; sourceTree = "<group>"; };
+		89CF2F401E44EFA4000061BD /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableViewController.swift; path = Controller/ProductTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				89999ED11E3259470092C0F1 /* NetworkService.swift */,
+				89CF2F3C1E44D122000061BD /* dataModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 		89999ED61E327CDC0092C0F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				89CF2F401E44EFA4000061BD /* ProductTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -97,7 +103,7 @@
 		89999ED81E327CEB0092C0F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				89999ED31E327CBF0092C0F1 /* summaries.json */,
+				89CF2F3A1E44C9C6000061BD /* summaries.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,10 +168,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89999ED41E327CBF0092C0F1 /* summaries.json in Resources */,
 				89999ECA1E3258510092C0F1 /* LaunchScreen.storyboard in Resources */,
 				89999EC71E3258510092C0F1 /* Assets.xcassets in Resources */,
 				89999EC51E3258510092C0F1 /* Main.storyboard in Resources */,
+				89CF2F3B1E44C9C6000061BD /* summaries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89999EC21E3258510092C0F1 /* ViewController.swift in Sources */,
+				89CF2F3D1E44D122000061BD /* dataModel.swift in Sources */,
 				89999ED21E3259470092C0F1 /* NetworkService.swift in Sources */,
 				89999EC01E3258510092C0F1 /* AppDelegate.swift in Sources */,
+				89CF2F411E44EFA4000061BD /* ProductTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +350,7 @@
 				89999ED01E3258510092C0F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
