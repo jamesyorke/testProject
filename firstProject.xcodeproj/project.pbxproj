@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		896E612E1E49EA060040002D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E612D1E49EA060040002D /* TableViewCell.swift */; };
 		89999EC01E3258510092C0F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89999EBF1E3258510092C0F1 /* AppDelegate.swift */; };
 		89999EC21E3258510092C0F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89999EC11E3258510092C0F1 /* ViewController.swift */; };
 		89999EC51E3258510092C0F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89999EC31E3258510092C0F1 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		896E612D1E49EA060040002D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = Controller/TableViewCell.swift; sourceTree = "<group>"; };
 		89999EBC1E3258510092C0F1 /* firstProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89999EBF1E3258510092C0F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89999EC11E3258510092C0F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		89999ED71E327CE20092C0F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				896E612D1E49EA060040002D /* TableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				89999EC21E3258510092C0F1 /* ViewController.swift in Sources */,
 				89CF2F3D1E44D122000061BD /* dataModel.swift in Sources */,
 				89999ED21E3259470092C0F1 /* NetworkService.swift in Sources */,
+				896E612E1E49EA060040002D /* TableViewCell.swift in Sources */,
 				89999EC01E3258510092C0F1 /* AppDelegate.swift in Sources */,
 				89CF2F411E44EFA4000061BD /* ProductTableViewController.swift in Sources */,
 			);

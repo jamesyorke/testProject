@@ -9,33 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let service = NetworkService.sharedInstance
-
-    let productTableVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductTableVC") as! ProductTableViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func didTapStartButton(_ sender: UIButton) {
+        
+        let service = NetworkService.sharedInstance
+
         service.startService() { success in
             guard success else {
-                self.view.backgroundColor = UIColor.blue
+                self.view.backgroundColor = UIColor.red
                 return
             }
             
-            self.testData()
-            
-            self.present(self.productTableVC, animated: true, completion: nil)
+//            self.testData()
+
+            let productTableVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductTableVC") as! ProductTableViewController
+
+            self.present(productTableVC, animated: true, completion: nil)
 
         }
         
-//        let delay = DispatchTime.now() + 2
-//        DispatchQueue.main.asyncAfter(deadline: delay) {
-//            self.testData()
-//        }
-//        
     }
 
     func testData() {

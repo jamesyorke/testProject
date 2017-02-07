@@ -15,7 +15,7 @@ class DataModel: NSObject, addDataToStoreDelegate {
     static let sharedInstance = DataModel()
     
     var names: [String] = []
-    var prices: [Double] = []
+    var prices: [String] = []
     
     private override init() {
         super.init()
@@ -26,8 +26,9 @@ class DataModel: NSObject, addDataToStoreDelegate {
 
     
     func addPrice(priceInt: Int) {
-        let price = Double(priceInt/100)
-        self.prices.append(price)
+        let price = Float(priceInt)/100
+        let priceString = String(format: "%.2f", price)
+        self.prices.append(priceString)
     }
     
     func addName(name: String) {
