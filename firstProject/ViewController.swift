@@ -10,8 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+//    let navigationController = UINavigationController(rootViewController: self)
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Initial View="
+        
     }
 
     @IBAction func didTapStartButton(_ sender: UIButton) {
@@ -24,20 +29,24 @@ class ViewController: UIViewController {
                 return
             }
             
-//            self.testData()
-
-            let productTableVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProductTableVC") as! ProductTableViewController
-
-            self.present(productTableVC, animated: true, completion: nil)
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "SegueIdentifier", sender: self)
+            }
+            
+//            let productTableVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"ProductTableVC") as! ProductTableViewController
+//            
+//            self.present(productTableVC, animated: true, completion: nil)
 
         }
         
     }
-
-    func testData() {
-        let model = DataModel.sharedInstance
-
-        print(model.names)
-    }
+    
+//
+//    func testData() {
+//        let model = DataModel.sharedInstance
+//
+//        print(model.names)
+//    }
 }
 

@@ -81,7 +81,6 @@
 		89999ED51E327CD20092C0F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				89999ED11E3259470092C0F1 /* NetworkService.swift */,
 				89CF2F3C1E44D122000061BD /* dataModel.swift */,
 			);
 			name = Model;
@@ -90,6 +89,7 @@
 		89999ED61E327CDC0092C0F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				89999ED11E3259470092C0F1 /* NetworkService.swift */,
 				89CF2F401E44EFA4000061BD /* ProductTableViewController.swift */,
 			);
 			name = Controller;

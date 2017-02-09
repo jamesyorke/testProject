@@ -14,12 +14,22 @@ class ProductTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Table View"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(ProductTableViewController.dismissTableView))
+//        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(Progress.cancel))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: Selector("done"))
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,4 +113,8 @@ class ProductTableViewController: UITableViewController {
     }
     */
 
+    
+    func dismissTableView() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
